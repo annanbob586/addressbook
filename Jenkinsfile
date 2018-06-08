@@ -5,7 +5,7 @@ pipeline {
         stage('Compile Stage') {
 
            steps {
-               newMavenBuild(maven : '/opt/maven'){
+               withMaven(maven : '/opt/maven'){
                    sh 'mvn clean package'
               }
           }
