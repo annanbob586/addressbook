@@ -21,7 +21,7 @@ pipeline {
         stage('Deployment Stage') {
 
            steps {
-               sh 'cp **/target/addressbook.war /tmp'
+               sh 'cp /var/lib/jenkins/workspace/addressbook/target/addressbook.war /tmp'
           }
         }
     }
