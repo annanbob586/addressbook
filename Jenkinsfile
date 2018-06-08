@@ -6,7 +6,7 @@ pipeline {
 
            steps {
                withMaven(maven : '/opt/maven'){
-                   sh 'mvn clean compile'
+                   sh 'mvn clean package'
               }
           }
         }
@@ -21,10 +21,8 @@ pipeline {
         stage('Deployment Stage') {
 
            steps {
-               withMaven(maven : '/opt/maven'){
-                   sh 'mvn deploy'
-              }
+               sh 'cp **/target/addressbook.war /tmp'
           }
-        }        
+        }
     }
 }
