@@ -5,7 +5,7 @@ pipeline {
         stage('Compile Stage') {
 
            steps {
-               withMaven(maven : '/etc/maven'){
+               withMaven(maven : '/usr/share/maven/bin/'){
                    sh 'mvn clean package'
               }
           }
@@ -13,7 +13,7 @@ pipeline {
         stage('Testing Stage') {
 
            steps {
-               withMaven(maven : '/etc/maven'){
+               withMaven(maven : '/usr/share/maven/bin/'){
                    sh 'mvn test'
               }
           }
