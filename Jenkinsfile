@@ -22,6 +22,7 @@ pipeline {
 
            steps {
                sh 'cp /var/lib/jenkins/workspace/addressbook/target/addressbook.war /tmp'
+               sh 'ansible servers -m ping'
           }
         }
     }
